@@ -1,0 +1,23 @@
+<nav class="navbar">
+
+  <div class="container"> 
+    <a href="#" class="navbar-brand" (click)="scrollToSection($event, 'Popular')">MovieMax</a>
+    
+    <button class="hamburger" (click)="toggleMenu()">
+      <span class="icon">{{ menuActive ? '✖' : '☰' }}</span> <!-- Show X or ☰ -->
+    </button>
+
+    <div class="navbar-menu" [class.active]="menuActive">
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Popular')">Popular</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Action')">Action</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Horror')">Horror</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Comedy')">Comedy</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Romance')">Romance</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Sci-Fi')">Sci-Fi</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Fantasy')">Fantasy</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Thriller')">Thriller</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Animation')">Animation</a>
+      <a href="#" class="navbar-item" (click)="scrollToSection($event, 'Drama')">Drama</a>
+    </div>
+  </div>
+</nav>

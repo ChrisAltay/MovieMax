@@ -1,0 +1,42 @@
+<div class="hero-section">
+  <img [src]="featuredMovie.imageUrl" alt="{{ featuredMovie.title }}" class="hero-image">
+  <div class="hero-text">
+    <h1>{{ featuredMovie.title }}</h1>
+    <p>{{ featuredMovie.description }}</p>
+  </div>
+</div>
+
+<!-- Your existing genre sections below -->
+<div id="Popular" class="genre-section">
+  <h2>Popular on MovieMax</h2>
+  <div class="movies-container">
+    <button class="scroll-left" (click)="scrollLeft('Popular')">&#8249;</button>
+    <div class="movies">
+      <div *ngFor="let movie of topRatedMovies" class="movie">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+        <h3>{{ movie.title }}</h3>
+      </div>
+    </div>
+    <button class="scroll-right" (click)="scrollRight('Popular')">&#8250;</button>
+  </div>
+</div>
+
+<!-- Repeat for each genre -->
+<div *ngFor="let genre of genres" class="genre-section1" id="{{genre.name}}">
+  <h2>{{ genre.name }}</h2>
+  <div class="movies-container">
+    <button class="scroll-left" (click)="scrollLeft(genre.name)">&#8249;</button>
+    <div class="movies">
+      <div *ngFor="let movie of moviesByGenre[genre.name]" class="movie">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}">
+        <h3>{{ movie.title }}</h3>
+      </div>
+    </div>
+    <button class="scroll-right" (click)="scrollRight(genre.name)">&#8250;</button>
+  </div>
+</div>
+
+
+
+
+

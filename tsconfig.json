@@ -1,0 +1,40 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc", // Output directory for compiled files
+    "strict": true, // Enable all strict type-checking options
+    "noImplicitOverride": true, // Ensure method overrides are explicitly marked
+    "noPropertyAccessFromIndexSignature": true, // Disallow index signature property access
+    "noImplicitReturns": true, // Ensure all functions have return statements
+    "noFallthroughCasesInSwitch": true, // Ensure no fallthrough cases in switch statements
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enable ES module interoperability
+    "sourceMap": true, // Generate source maps
+    "declaration": false, // Do not generate declaration files
+    "experimentalDecorators": true, // Enable experimental support for decorators
+    "moduleResolution": "node", // Use Node module resolution strategy
+    "importHelpers": true, // Import helper functions from tslib
+    "target": "ES2022", // Set target ECMAScript version
+    "module": "ES2022", // Set module code generation
+    "lib": [
+      "ES2022",
+      "dom" // Include DOM library
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false, // Disable legacy message id format
+    "strictInjectionParameters": true, // Enable strict type checking for DI
+    "strictInputAccessModifiers": true, // Enable strict access modifier checking
+    "strictTemplates": true // Enable strict template checking
+  },
+  "include": [
+    "src/**/*.ts" // Include all TypeScript files in src and its subdirectories
+  ],
+  "exclude": [
+    "server.ts", // Exclude server.ts
+    "src/main.server.ts", // Exclude main.server.ts
+    "src/app/app.config.server.ts", // Exclude app.config.server.ts
+    "src/**/*.ngtypecheck.ts", // Exclude type check files
+    "src/app/app.config.ts"
+  ]
+}
